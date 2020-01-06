@@ -18,7 +18,7 @@
 
   <style>
     html {
-      background: url("https://images.pexels.com/photos/1619801/pexels-photo-1619801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+      background: url("https://fsa.zobj.net/crop.php?r=ufJTVPVio8XXgczBXqIjoeKSiniZq9Zjhz2i-7a6e1J3r5259z_4vPyGNI5nGAnCq664cczdZBvrFm61TU56z01Yb5HIWnwigfol14Hzdr7q5gfT8EF7hXoqTdv6kP8JwY2cb3GkZXpNNQtd");
       background-size: contain;
       /*background-repeat: no-repeat;*/
       font-family: 'helvetica neue';
@@ -70,11 +70,11 @@
     }
 
     .hour-hand {
-      width: 35%;
+      width: 40%;
       height: 10px;
-      transform-origin: 122%;
+      transform-origin: 146%;
       background: orangered;
-      /*top: 45%;*/
+      top: 75%;
     }
 
     .second-hand {
@@ -88,9 +88,9 @@
     .min-hand {
       top: 55%;
       height: 6px;
-      width: 50%;
-      transform-origin: 100%;
-      background: orangered;
+      width: 55%;
+      transform-origin: 90%;
+      background: mediumpurple;
     }
 
   
@@ -114,12 +114,12 @@
 
         mindeg+=6;
 
-        if(mindeg==90){
+        // if(mindeg==90){
         
-          hourdeg+=30;
+          hourdeg+=(0.5);
           hourdeg%=360;
           hourhand.style.transform = `rotate(${hourdeg}deg)`;
-        }
+        // }
 
         mindeg%=360;
         minhand.style.transform=  `rotate(${mindeg}deg)`;
@@ -136,6 +136,7 @@
    
     const hour=now.getHours();
     hourdeg+=(hour*30);
+    hourdeg+=(minute*0.5);
    
     // console.log(seconds,minute,hour);
    
